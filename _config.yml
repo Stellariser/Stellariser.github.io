@@ -18,7 +18,9 @@ sidebar-avatar: /img/yanami.jpg      # use absolute URL, seeing it's used in bot
 
 # SNS settings
 RSS: false
-# weibo_username:     Stellariser
+# weibo_username:     Stellariserexclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+include: ["_posts"]  # 明确包含 _posts 目录
+keep_files: ["assets"]  # 保留 assets 目录中的文件
 #zhihu_username:     Stellariser
 github_username:    Stellariser
 #facebook_username:  baiying.qiu.7
