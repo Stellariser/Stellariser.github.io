@@ -1,0 +1,999 @@
+I"Ӧ<h1 id="dd2423">DD2423</h1>
+
+<h2 id="lecture-1-introduction-to-computer-vision">Lecture 1 <strong>Introduction to computer vision</strong></h2>
+
+<p>What does it mean that vision is an active process?</p>
+
+<p><img src="assets/img/dd2423/image-20241210073011736.png" alt="image-20241210073011736" /></p>
+
+<p>Given all other facts being equal, is the quality of a pixel in a high-resolution camera better than in a low-resolution camera?</p>
+
+<p><img src="assets/img/dd2423/image-20241210073103179.png" alt="image-20241210073103179" /></p>
+
+<p>Grey-level pixel values in digital cameras are usually stored in bytes (8 bits). Why can this be considered a serious limitation? There might be more than one correct answer among those below.</p>
+
+<p><img src="assets/img/dd2423/image-20241210073122801.png" alt="image-20241210073122801" /></p>
+
+<h3 id="summary-of-good-questions"><strong>Summary of good questions</strong></h3>
+
+<p>• What is a pinhole camera model?</p>
+
+<p><img src="img/dd2423/image-20241210154250723.png" alt="image-20241210154250723" /></p>
+
+<p>• What is the difference between intrinsic and extrinsic camera parameters?</p>
+
+<p><img src="img/dd2423/image-20241210154259224.png" alt="image-20241210154259224" /></p>
+
+<p>• How does a 3D point get projected to a pixel with a perspective projection?</p>
+
+<p><img src="img/dd2423/image-20241210154309193.png" alt="image-20241210154309193" /></p>
+
+<p>• What are homogeneous coordinates and what are they good for?</p>
+
+<p><img src="img/dd2423/image-20241210154317287.png" alt="image-20241210154317287" /></p>
+
+<p>• How is a perspective projection expressed in homogeneous coordinates?</p>
+
+<p><img src="img/dd2423/image-20241210154323533.png" alt="image-20241210154323533" /></p>
+
+<p>• What is a vanishing point and how do you find it?</p>
+
+<p><img src="img/dd2423/image-20241210154330789.png" alt="image-20241210154330789" /></p>
+
+<p>• What is an affine camera model?</p>
+
+<p><img src="img/dd2423/image-20241210154337585.png" alt="image-20241210154337585" /></p>
+
+<p>• When to choose to a perspective model vs an affine one?</p>
+
+<p><img src="img/dd2423/image-20241210154345849.png" alt="image-20241210154345849" /></p>
+
+<h2 id="lecture-2-projections-and-transformations">Lecture 2 <strong>Projections and transformations</strong></h2>
+
+<p>Assume you have a point at (3,−2,8) with respect to the camera’s coordinate system. If the image has a size (w, h) = (640, 480), origin in the upper-left corner and the focal length is f = 480, what is the x-coordinate of the image projection? Give an answer without decimals.</p>
+
+<p><img src="img/dd2423/image-20241210073812334.png" alt="image-20241210073812334" /></p>
+
+<p><img src="img/dd2423/image-20241210074256872.png" alt="image-20241210074256872" /></p>
+
+<p><img src="img/dd2423/image-20241210074436889.png" alt="image-20241210074436889" /></p>
+
+<p>Why are there so few real pinhole cameras?</p>
+
+<p><img src="img/dd2423/image-20241210074503182.png" alt="image-20241210074503182" /></p>
+
+<p>If we assume we have a point in homogeneous coordinates (5, 3, 4), what is the x-coordinate of the same point in Euclidean coordinates?</p>
+
+<p><img src="img/dd2423/image-20241210080445866.png" alt="image-20241210080445866" /></p>
+
+<p>A vanishing point is an image projection of some world point. Expressed in homogeneous coordinates, what is the last coordinate of this world point?</p>
+
+<p><img src="img/dd2423/image-20241210080458816.png" alt="image-20241210080458816" /></p>
+
+<p>Which of the following alternatives includes a group of intrinsic camera parameters?</p>
+
+<p><img src="img/dd2423/image-20241210080514001.png" alt="image-20241210080514001" /></p>
+
+<p><img src="img/dd2423/image-20241210080550922.png" alt="image-20241210080550922" /></p>
+
+<p>When can it be more convenient to use an affine camera model than a perspective one?</p>
+
+<p><img src="img/dd2423/image-20241210080604953.png" alt="image-20241210080604953" /></p>
+
+<h2 id="lecture-3-image-filtering">Lecture 3 <strong>Image filtering</strong></h2>
+
+<p>What properties does a linear filter have? Multiple answers are possible.</p>
+
+<p><img src="img/dd2423/image-20241210080641518.png" alt="image-20241210080641518" /></p>
+
+<p>What is the convolution of [1,2,3] and [1,2,3]?</p>
+
+<p><img src="img/dd2423/image-20241210082938171.png" alt="image-20241210082938171" /></p>
+
+<p><img src="img/dd2423/image-20241210084143286.png" alt="image-20241210084143286" /></p>
+
+<p>What is the (magnitude of the) Fourier transform of a box function</p>
+
+<p><img src="img/dd2423/image-20241210084207674.png" alt="image-20241210084207674" /></p>
+
+<p><img src="https://cdn.discordapp.com/attachments/1229342549140050004/1315781217593065593/image.png?ex=6758a840&amp;is=675756c0&amp;hm=0485c0c33aadcb7bcdbfb70847edf79c5f2c8095c3055bea57d5c11b1afc71a7&amp;" alt="img" /></p>
+
+<p>Which Fourier transform corresponds to which image below?</p>
+
+<p><img src="img/dd2423/image-20241210084253140.png" alt="image-20241210084253140" /></p>
+
+<p>What does the phase information of a Fourier transform contain? Multiple answers are possible.</p>
+
+<p><img src="img/dd2423/image-20241210091142580.png" alt="image-20241210091142580" /></p>
+
+<p>Compute the discrete Fourier transform f (u) of the 4-pixel image f(u)=1, 3, 2, 1. Without normalisation, what is the magnitude of the Fourier transform?</p>
+
+<p><img src="img/dd2423/image-20241210091210758.png" alt="image-20241210091210758" /></p>
+
+<p><img src="img/dd2423/image-20241210091348792.png" alt="image-20241210091348792" /></p>
+
+<p><img src="img/dd2423/image-20241210091408105.png" alt="image-20241210091408105" /></p>
+
+<p><img src="img/dd2423/image-20241210093002391.png" alt="image-20241210093002391" /></p>
+
+<p><img src="img/dd2423/image-20241210091416794.png" alt="image-20241210091416794" /></p>
+
+<p><img src="img/dd2423/image-20241210091427314.png" alt="image-20241210091427314" /></p>
+
+<p><img src="img/dd2423/image-20241210091432404.png" alt="image-20241210091432404" /></p>
+
+<p>Which ones of the following statements are true regarding Fourier transforms?</p>
+
+<p><img src="img/dd2423/image-20241210093046987.png" alt="image-20241210093046987" /></p>
+
+<p>For a 1D signal, what does the conjugate symmetry and periodicity of the Fourier transform imply?</p>
+
+<p><img src="img/dd2423/image-20241210093124278.png" alt="image-20241210093124278" /></p>
+
+<p><img src="img/dd2423/image-20241210094455430.png" alt="image-20241210094455430" /></p>
+
+<p><img src="img/dd2423/image-20241210094510790.png" alt="image-20241210094510790" /></p>
+
+<p>How do you compute the convolution h, = f* g of two discrete signals, f and g</p>
+
+<p><img src="img/dd2423/image-20241210094539999.png" alt="image-20241210094539999" /></p>
+
+<p><img src="img/dd2423/image-20241210094634038.png" alt="image-20241210094634038" /></p>
+
+<h3 id="summary-of-good-questions-1"><strong>Summary of good questions</strong></h3>
+
+<p>• What properties does a linear shift-invariant filter have?</p>
+
+<p><img src="img/dd2423/image-20241210154501136.png" alt="image-20241210154501136" /></p>
+
+<p>• How do you define a convolution?</p>
+
+<p><img src="img/dd2423/image-20241210154509994.png" alt="image-20241210154509994" /></p>
+
+<p>• Why are convolutions important in linear filtering?</p>
+
+<p><img src="img/dd2423/image-20241210154519455.png" alt="image-20241210154519455" /></p>
+
+<p>• How do you define a 2D Fourier transform?</p>
+
+<p><img src="img/dd2423/image-20241210154537425.png" alt="image-20241210154537425" /></p>
+
+<p>• If you apply a Fourier transform to an image, what do you get?</p>
+
+<p><img src="img/dd2423/image-20241210154550706.png" alt="image-20241210154550706" /></p>
+
+<p>• What information does the phase contain? And the magnitude?</p>
+
+<p><img src="img/dd2423/image-20241210154559163.png" alt="image-20241210154559163" /></p>
+
+<p>• What is the Fourier transform of a convolution? Why important?</p>
+
+<p><img src="img/dd2423/image-20241210154606628.png" alt="image-20241210154606628" /></p>
+
+<p>• What does separability of filters mean?</p>
+
+<p><img src="img/dd2423/image-20241210154612885.png" alt="image-20241210154612885" /></p>
+
+<p>• How do you interpret a point in the Fourier domain in the spatial domain?</p>
+
+<p><img src="img/dd2423/image-20241210154620842.png" alt="image-20241210154620842" /></p>
+
+<p>• How do you apply a discrete Fourier transform?</p>
+
+<p><img src="img/dd2423/image-20241210154630794.png" alt="image-20241210154630794" /></p>
+
+<p>• What happens to the Fourier transform, if you translate or rotate an image?</p>
+
+<p><img src="img/dd2423/image-20241210154637239.png" alt="image-20241210154637239" /></p>
+
+<p>• In what sense is the Fourier transform symmetric?</p>
+
+<p><img src="img/dd2423/image-20241210154643111.png" alt="image-20241210154643111" /></p>
+
+<h2 id="lecture-4-image-enhancement">Lecture 4 <strong>Image enhancement</strong></h2>
+
+<p>Assume that you apply the grey-level transformation below to an image. Which of the given statements are correct? There might be multiple correct answers.</p>
+
+<p><img src="img/dd2423/image-20241210095027980.png" alt="image-20241210095027980" /></p>
+
+<p>Assume that you apply Histogram Equalization to an image with a grey-level distribution pz(z)= 2(1-z);z∈[0,1]
+using a transformation =T(z) € 0,1,where T(0)=0 and T(1)= 1.Which grey-level value z in the new image will the grey-level z = 0.5 be mapped to, that is what is T(0.5)?</p>
+
+<p><img src="img/dd2423/image-20241210095434010.png" alt="image-20241210095434010" /></p>
+
+<p><img src="img/dd2423/image-20241210095703466.png" alt="image-20241210095703466" /></p>
+
+<p><img src="img/dd2423/image-20241210095717729.png" alt="image-20241210095717729" /></p>
+
+<p>Assume you do Histogram Equalization of a discrete grey-level image with 256 grey-levels to get a new image with an equal number of grey-levels on the output. Which of the following statements are true? There might be multiple correct answers.</p>
+
+<p><img src="img/dd2423/image-20241210095734675.png" alt="image-20241210095734675" /></p>
+
+<h3 id="summary-of-good-questions-2"><strong>Summary of good questions</strong></h3>
+
+<p>• Mention a typical grey-level transformation. When to use it?</p>
+
+<p><img src="img/dd2423/image-20241210154813885.png" alt="image-20241210154813885" /></p>
+
+<p>• What do histogram stretching and compression mean?</p>
+
+<p><img src="img/dd2423/image-20241210154829159.png" alt="image-20241210154829159" /></p>
+
+<p>• What are the principles of histogram equalization?</p>
+
+<p><img src="img/dd2423/image-20241210154841741.png" alt="image-20241210154841741" /></p>
+
+<p>• What are the differences between lowpass, bandpass and highpass filters?</p>
+
+<p><img src="img/dd2423/image-20241210154849815.png" alt="image-20241210154849815" /></p>
+
+<p>• Why are ideal lowpass filter rarely used in practice?</p>
+
+<p><img src="img/dd2423/image-20241210154902224.png" alt="image-20241210154902224" /></p>
+
+<p>• What characteristics does a Gaussian filter have?</p>
+
+<p><img src="img/dd2423/image-20241210154908500.png" alt="image-20241210154908500" /></p>
+
+<p>• What is the difference between mean and median filters?</p>
+
+<p><img src="img/dd2423/image-20241210154914422.png" alt="image-20241210154914422" /></p>
+
+<p>• How can you do sharpening?</p>
+
+<p><img src="img/dd2423/image-20241210154921244.png" alt="image-20241210154921244" /></p>
+
+<p>• How can you approximate a first order derivative?</p>
+
+<p><img src="img/dd2423/image-20241210154931088.png" alt="image-20241210154931088" /></p>
+
+<p>• What is a Laplacian?</p>
+
+<p><img src="img/dd2423/image-20241210154937622.png" alt="image-20241210154937622" /></p>
+
+<h2 id="lecture-5-image-features-i">Lecture 5 <strong>Image features I</strong></h2>
+
+<p>Which statements below are true for the filter with kernel [1,-2, 1]? There might be multiple correct answers.</p>
+
+<p><img src="img/dd2423/image-20241210095858411.png" alt="image-20241210095858411" /></p>
+
+<p><img src="img/dd2423/image-20241210093002391.png" alt="image-20241210093002391" /></p>
+
+<p><img src="img/dd2423/image-20241210100321968.png" alt="image-20241210100321968" /></p>
+
+<p><img src="img/dd2423/image-20241210100601481.png" alt="image-20241210100601481" /></p>
+
+<p><img src="img/dd2423/image-20241210100632128.png" alt="image-20241210100632128" /></p>
+
+<p><img src="img/dd2423/image-20241210100644402.png" alt="image-20241210100644402" /></p>
+
+<p><img src="img/dd2423/image-20241210100651212.png" alt="image-20241210100651212" /></p>
+
+<h3 id="summary-of-good-questions-3"><strong>Summary of good questions</strong></h3>
+
+<p>• Why do we get image aliasing when subsampling and what to do about it?</p>
+
+<p><img src="img/dd2423/image-20241210155018278.png" alt="image-20241210155018278" /></p>
+
+<p>• Why is the notion of scale important in image analysis and computer vision?</p>
+
+<p><img src="img/dd2423/image-20241210155026757.png" alt="image-20241210155026757" /></p>
+
+<p>• What is a scale-space representation? On what basis is it constructed?</p>
+
+<p><img src="img/dd2423/image-20241210155041706.png" alt="image-20241210155041706" /></p>
+
+<p>• What structural requirements are natural to impose on early visual operations?</p>
+
+<p><img src="img/dd2423/image-20241210155051925.png" alt="image-20241210155051925" /></p>
+
+<p>• What is meant by a Gaussian derivative? Why are these important?</p>
+
+<p><img src="img/dd2423/image-20241210155116885.png" alt="image-20241210155116885" /></p>
+
+<p>• Why is edge detection important for image understanding?</p>
+
+<p><img src="img/dd2423/image-20241210155126642.png" alt="image-20241210155126642" /></p>
+
+<p>• What families of methods exist for edge detection?</p>
+
+<p><img src="img/dd2423/image-20241210155136496.png" alt="image-20241210155136496" /></p>
+
+<p>• What information do image gradients provide?</p>
+
+<p><img src="img/dd2423/image-20241210155144847.png" alt="image-20241210155144847" /></p>
+
+<p>• How does the Canny edge detector work?</p>
+
+<p><img src="img/dd2423/image-20241210155151275.png" alt="image-20241210155151275" /></p>
+
+<p>• What is differential edge detection?</p>
+
+<p><img src="img/dd2423/image-20241210155157001.png" alt="image-20241210155157001" /></p>
+
+<p>• What should the image derivatives be equal to on edge points?</p>
+
+<p><img src="img/dd2423/image-20241210155201778.png" alt="image-20241210155201778" /></p>
+
+<h2 id="lecture-6-image-features-ii">Lecture 6 <strong>Image features II</strong></h2>
+
+<p>Which of the images below are the results of a Gaussian filter, a Median filter and an Ideal low-pass filter respectively, given the top-left input image?</p>
+
+<p><img src="img/dd2423/image-20241210100717522.png" alt="image-20241210100717522" /></p>
+
+<p><img src="img/dd2423/image-20241210100800318.png" alt="image-20241210100800318" /></p>
+
+<p><img src="img/dd2423/image-20241210100809912.png" alt="image-20241210100809912" /></p>
+
+<p><img src="img/dd2423/image-20241210100822441.png" alt="image-20241210100822441" /></p>
+
+<p>air these scale-space properties that Gaussians satisfy</p>
+
+<p>A. Semi-group property over scale,</p>
+
+<p>B. Shift invariance over space,</p>
+
+<p>C. non-enhancement of local extrema,</p>
+
+<p>with what they mean in practise:</p>
+
+<ol>
+  <li>As you gradually increase the scale and blur the image, no new edges will appear,</li>
+  <li>If you apply two Gaussian filters with variances s1 and s2 in sequence, you get the same results as if you were applying one Gaussian filter with variance s1+s2,</li>
+  <li>The result of a Gaussian filter does not depend on the position in the image.</li>
+</ol>
+
+<p><img src="img/dd2423/image-20241210100906389.png" alt="image-20241210100906389" /></p>
+
+<p>Which ones of the following Gaussian operators are rotationally symmetric? Multiple answers might be correct.</p>
+
+<p><img src="img/dd2423/image-20241210100927117.png" alt="image-20241210100927117" /></p>
+
+<p>What is true regarding Canny’s edge detector? Multiple answers might be correct.</p>
+
+<p><img src="img/dd2423/image-20241210100939675.png" alt="image-20241210100939675" /></p>
+
+<p>For a differential edge detector, what are the conditions on the second order and third order derivatives in the gradient direction, i.e. Lvv and Lvvv respectively?</p>
+
+<p><img src="img/dd2423/image-20241210100955162.png" alt="image-20241210100955162" /></p>
+
+<p>What happens during sampling if an image contains frequencies higher than half the sampling rate? Multiple answers are possible.</p>
+
+<p><img src="img/dd2423/image-20241210101031738.png" alt="image-20241210101031738" /></p>
+
+<h3 id="summary-of-good-questions-4"><strong>Summary of good questions</strong></h3>
+
+<p>• What are the motivations for computing interest points? What are they typically used for?</p>
+
+<p><img src="img/dd2423/image-20241210155333108.png" alt="image-20241210155333108" /></p>
+
+<p>• Describe three common interest point detectors including their mathematical definitions.</p>
+
+<p><img src="img/dd2423/image-20241210155340134.png" alt="image-20241210155340134" /></p>
+
+<p>• Why is scale selection an important operation?</p>
+
+<p><img src="img/dd2423/image-20241210155346551.png" alt="image-20241210155346551" /></p>
+
+<p>• Describe how scale selection can be performed in practice.</p>
+
+<p><img src="img/dd2423/image-20241210155353257.png" alt="image-20241210155353257" /></p>
+
+<p>• What is the motivation for using image pyramids in computer vision?</p>
+
+<p><img src="img/dd2423/image-20241210155358679.png" alt="image-20241210155358679" /></p>
+
+<p>• How are image pyramids computed from image data?</p>
+
+<p><img src="img/dd2423/image-20241210155403745.png" alt="image-20241210155403745" /></p>
+
+<p>• Describe a basic trade-off issue that arises in hybrid pyramids.</p>
+
+<p><img src="img/dd2423/image-20241210155411103.png" alt="image-20241210155411103" /></p>
+
+<p>• What is the purpose of computing image descriptors at interest points?</p>
+
+<p><img src="img/dd2423/image-20241210155416545.png" alt="image-20241210155416545" /></p>
+
+<p>• How is the SIFT descriptor defined from image data?</p>
+
+<p><img src="img/dd2423/image-20241210155421432.png" alt="image-20241210155421432" /></p>
+
+<p>• How is the SURF descriptor defined from image data?</p>
+
+<p><img src="img/dd2423/image-20241210155427376.png" alt="image-20241210155427376" /></p>
+
+<p>• Outline the basic steps in an algorithm that matches interest points with associated image descriptors between two images of the same scene.</p>
+
+<p><img src="img/dd2423/image-20241210155447299.png" alt="image-20241210155447299" /></p>
+
+<h2 id="lecture-7-model-fitting-and-representation">Lecture 7 <strong>Model fitting and representation</strong></h2>
+
+<p>Which statements below regarding scale-space representations are true? Multiple correct answers might exist.</p>
+
+<p><img src="img/dd2423/image-20241210102015088.png" alt="image-20241210102015088" /></p>
+
+<p>How can you tell based on the eigenvalues (λ1,λ2) of a second moment matrix computed in a patch around an interest point whether the interest point is good for matching?</p>
+
+<p><img src="img/dd2423/image-20241210140713504.png" alt="image-20241210140713504" /></p>
+
+<p>When applying the Harris corner detector with constant k=0.05, a second moment matrix at a particular point is found to be</p>
+
+<p>μ=(41)(12).</p>
+
+<p>What is the Harris measure H at this point?</p>
+
+<p><img src="img/dd2423/image-20241210140748616.png" alt="image-20241210140748616" /></p>
+
+<p><img src="img/dd2423/image-20241210140937216.png" alt="image-20241210140937216" /></p>
+
+<p><img src="img/dd2423/image-20241210140956364.png" alt="image-20241210140956364" /></p>
+
+<p><img src="img/dd2423/image-20241210141014916.png" alt="image-20241210141014916" /></p>
+
+<p>Which statements are true for the Determinant of Hessian, unlike the Laplacian, when applied for blob detection? Multiple answers might be correct.</p>
+
+<p><img src="img/dd2423/image-20241210141030628.png" alt="image-20241210141030628" /></p>
+
+<p>What could you compute for blob detection in scale-space, if you want the scale t of where you find a local maximum in both scale and space to be indicative of the real size of the blob? Multiple answers might be correct.</p>
+
+<p><img src="img/dd2423/image-20241210141056767.png" alt="image-20241210141056767" /></p>
+
+<p>Which statement is untrue regarding SIFT descriptors?</p>
+
+<p><img src="img/dd2423/image-20241210141112618.png" alt="image-20241210141112618" /></p>
+
+<p>Assume that you have a shape given by the X-marks in the figure below, with an x-axis pointing to the right and an y-axis pointing downwards? What is the centered 2nd order moment x-wise of this shape?</p>
+
+<p><img src="img/dd2423/image-20241210141143207.png" alt="image-20241210141143207" /></p>
+
+<p><img src="img/dd2423/image-20241210141504940.png" alt="image-20241210141504940" /></p>
+
+<p><img src="img/dd2423/image-20241210141554857.png" alt="image-20241210141554857" /></p>
+
+<p><img src="img/dd2423/image-20241210141533004.png" alt="image-20241210141533004" /></p>
+
+<p><img src="img/dd2423/image-20241210141606838.png" alt="image-20241210141606838" /></p>
+
+<p>Which statements mentioned below regarding Hough Transform are true? Multiple answers can be correct.</p>
+
+<p><img src="img/dd2423/image-20241210141623360.png" alt="image-20241210141623360" /></p>
+
+<p>Assume that you use RANSAC to find straight lines. In the first round RANSAC randomly selects p1=(1,2) and p2=(3,5). Will the points p3=(2,2) and p4=(4,6) be regarded as inliers or outliers assuming the you measure errors in the y-direction and apply a threshold ϵ=1.</p>
+
+<p><img src="img/dd2423/image-20241210141658756.png" alt="image-20241210141658756" /></p>
+
+<p><img src="img/dd2423/image-20241210141828790.png" alt="image-20241210141828790" /></p>
+
+<p><img src="img/dd2423/image-20241210141841668.png" alt="image-20241210141841668" /></p>
+
+<p>Which one of the following statements regarding homographies expressed as 3×3 matrices in homogeneous coordinates is false?</p>
+
+<p><img src="img/dd2423/image-20241210141855229.png" alt="image-20241210141855229" /></p>
+
+<p><img src="img/dd2423/image-20241210142010600.png" alt="image-20241210142010600" /></p>
+
+<p><img src="img/dd2423/image-20241210142020265.png" alt="image-20241210142020265" /></p>
+
+<p>Assume that you do principal component analysis (PCA) on some data points in 2D. Given the points below, which directions are possible directions for the first principal component? Multiple answers might be correct?</p>
+
+<p><img src="img/dd2423/image-20241210141941351.png" alt="image-20241210141941351" /></p>
+
+<h3 id="summary-of-good-questions-5"><strong>Summary of good questions</strong></h3>
+
+<p>• How does a Hough transform work for lines?</p>
+
+<p><img src="img/dd2423/image-20241210155648407.png" alt="image-20241210155648407" /></p>
+
+<p>• How many accumulators should you use?</p>
+
+<p><img src="img/dd2423/image-20241210155653479.png" alt="image-20241210155653479" /></p>
+
+<p>• How does RANSAC work?</p>
+
+<p><img src="img/dd2423/image-20241210155657877.png" alt="image-20241210155657877" /></p>
+
+<p>• What is a homography?</p>
+
+<p><img src="img/dd2423/image-20241210155703513.png" alt="image-20241210155703513" /></p>
+
+<p>• How do you create a connected component?</p>
+
+<p><img src="img/dd2423/image-20241210155709430.png" alt="image-20241210155709430" /></p>
+
+<p>• In what ways can two shape descriptors be different?</p>
+
+<p><img src="img/dd2423/image-20241210155716049.png" alt="image-20241210155716049" /></p>
+
+<p>• Can you give two examples of two shape descriptors?</p>
+
+<p><img src="img/dd2423/image-20241210155722545.png" alt="image-20241210155722545" /></p>
+
+<p>• How do you compute moment descriptors?</p>
+
+<p><img src="img/dd2423/image-20241210155726560.png" alt="image-20241210155726560" /></p>
+
+<p>• What do you like to preserve with dimensionality reduction?</p>
+
+<p><img src="img/dd2423/image-20241210155732205.png" alt="image-20241210155732205" /></p>
+
+<p>• How does a PCA work?</p>
+
+<p><img src="img/dd2423/image-20241210155737245.png" alt="image-20241210155737245" /></p>
+
+<h2 id="lecture-8-deep-networks-for-computer-vision">Lecture 8 <strong>Deep networks for computer vision</strong></h2>
+
+<p>What statements regarding deep learning for computer vision are true? Multiple correct statements are possible.</p>
+
+<p><img src="img/dd2423/image-20241210142049015.png" alt="image-20241210142049015" /></p>
+
+<p>Which of the following statements is NOT true regarding activation functions?</p>
+
+<p><img src="img/dd2423/image-20241210142115412.png" alt="image-20241210142115412" /></p>
+
+<p>Convolutional neural networks (CNNs) typically contain a number of layers of different types. Match the statements below to the correct layer type.</p>
+
+<p>Makes CNNs gradually more translationally invariant.</p>
+
+<p>​          Pooling layers</p>
+
+<p>Uses weight sharing to reduce the number of parameters to train.</p>
+
+<p>​          Convolutional layers</p>
+
+<p>Can often be retrained for a quick transfer to new training data.</p>
+
+<p>​          Fully-connected layers</p>
+
+<p>Other Incorrect Match Options:</p>
+
+<ul>
+  <li>Invariance layers</li>
+  <li>Training layers</li>
+</ul>
+
+<p><img src="img/dd2423/image-20241210142142353.png" alt="image-20241210142142353" /></p>
+
+<p>Over the years deep networks have gradually become better through a series of improvements. Which of the following statements are true regarding modern networks? Multiple statements may be correct.</p>
+
+<p><img src="img/dd2423/image-20241210142200822.png" alt="image-20241210142200822" /></p>
+
+<h3 id="summary-of-good-questions-6"><strong>Summary of good questions</strong></h3>
+
+<p>• How does a perceptron work?</p>
+
+<p><img src="img/dd2423/image-20241210155828261.png" alt="image-20241210155828261" /></p>
+
+<p>• Why do you need an activation function?</p>
+
+<p><img src="img/dd2423/image-20241210155838813.png" alt="image-20241210155838813" /></p>
+
+<p>• What is a loss function?</p>
+
+<p><img src="img/dd2423/image-20241210155849092.png" alt="image-20241210155849092" /></p>
+
+<p>• How does backpropagation work in principle?</p>
+
+<p><img src="img/dd2423/image-20241210155900818.png" alt="image-20241210155900818" /></p>
+
+<p>• Why does a CNN have so many fewer parameters than a FCN has?</p>
+
+<p><img src="img/dd2423/image-20241210155907705.png" alt="image-20241210155907705" /></p>
+
+<p>• What are the typical layers of a CNN?</p>
+
+<p><img src="img/dd2423/image-20241210155914337.png" alt="image-20241210155914337" /></p>
+
+<p>• How do learned image descriptors perform compared to handcrafted ones?</p>
+
+<p><img src="img/dd2423/image-20241210155927439.png" alt="image-20241210155927439" /></p>
+
+<p>• What is the structure of an autoencoder?</p>
+
+<p><img src="img/dd2423/image-20241210155933071.png" alt="image-20241210155933071" /></p>
+
+<p>• What is the difference between a VAE and a GAN?</p>
+
+<p><img src="img/dd2423/image-20241210155938687.png" alt="image-20241210155938687" /></p>
+
+<p>• What can GANs be used for?</p>
+
+<p><img src="img/dd2423/image-20241210155942870.png" alt="image-20241210155942870" /></p>
+
+<p>• What are the basic components of a vision transformer network?</p>
+
+<p><img src="img/dd2423/image-20241210155947183.png" alt="image-20241210155947183" /></p>
+
+<h2 id="lecture-9-image-segmentation">Lecture 9 <strong>Image segmentation</strong></h2>
+
+<p>Assume that you want to apply thresholding to segment out foreground objects in three different images (A, B, C), where each image has it own distinct properties:</p>
+
+<ul>
+  <li>A - a foreground with grey-level values clearly distinct from the background,</li>
+  <li>B - a foreground for which you know the approximate size in the image, or</li>
+  <li>C - the foreground and background gradually changes in grey-levels over the image.</li>
+</ul>
+
+<p>Match the three cases to three possible thresholding methods:</p>
+
+<ul>
+  <li>1 - P-tile method</li>
+  <li>2 - Adaptive thresholding</li>
+  <li>3 - Mode method</li>
+</ul>
+
+<p><img src="img/dd2423/image-20241210142314191.png" alt="image-20241210142314191" /></p>
+
+<p><img src="img/dd2423/image-20241210142410595.png" alt="image-20241210142410595" /></p>
+
+<p>Which statements regarding Mean-Shift segmentation are true? Multiple statements can be correct.</p>
+
+<p><img src="img/dd2423/image-20241210142442204.png" alt="image-20241210142442204" /></p>
+
+<p>Let’s say we want to apply Normalized Cut to a group of 2x2 pixels [p1, p2 ; p3, p4] with links between neighbouring pixels using a 4-neighbourhood system. The links have weights w(p1,p2) = 3, w(p1,p3) = 2, w(p2,p4) = 1 and w(p3,p4) = 1. What is the minimal normalized cut Ncut in this case?</p>
+
+<p><img src="img/dd2423/image-20241210142528653.png" alt="image-20241210142528653" /></p>
+
+<p><img src="img/dd2423/image-20241210142653767.png" alt="image-20241210142653767" /></p>
+
+<p>What is the most important reason why GrabCut normally works better than either Thresholding, Normalized Cuts and Mean-Shift for segmenting out a foreground object from its background?</p>
+
+<p><img src="img/dd2423/image-20241210142921405.png" alt="image-20241210142921405" /></p>
+
+<p>Assume you apply a morphological opening operation on the image</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>0</th>
+      <th>1</th>
+      <th>1</th>
+      <th>1</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>with the structural element</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>0</th>
+      <th>1</th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>What do you get?</p>
+
+<p>After erosion you have</p>
+
+<p>0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0</p>
+
+<p>and dilation you have</p>
+
+<p>0 0 0 1 0 0 0 1 1 1 0 1 1 1 0 1 1 1 0 0 0 1 0 0 0</p>
+
+<p><img src="img/dd2423/image-20241210143048229.png" alt="image-20241210143048229" /></p>
+
+<p><img src="img/dd2423/image-20241210143213549.png" alt="image-20241210143213549" /></p>
+
+<p><img src="img/dd2423/image-20241210143222120.png" alt="image-20241210143222120" /></p>
+
+<h3 id="summary-of-good-questions-7"><strong>Summary of good questions</strong></h3>
+
+<p>• What is the purpose of image segmentation?</p>
+
+<p><img src="img/dd2423/image-20241210160018480.png" alt="image-20241210160018480" /></p>
+
+<p>• How to select a threshold for histogram-based segmentation?</p>
+
+<p><img src="img/dd2423/image-20241210160025178.png" alt="image-20241210160025178" /></p>
+
+<p>• How does K-means work?</p>
+
+<p><img src="img/dd2423/image-20241210160031731.png" alt="image-20241210160031731" /></p>
+
+<p>• Why is spatial coherence important for segmentation?</p>
+
+<p><img src="img/dd2423/image-20241210160037033.png" alt="image-20241210160037033" /></p>
+
+<p>• What does a mean-shift algorithm try to do and how?</p>
+
+<p><img src="img/dd2423/image-20241210160043257.png" alt="image-20241210160043257" /></p>
+
+<p>• What is an affinity matrix?</p>
+
+<p><img src="img/dd2423/image-20241210160050525.png" alt="image-20241210160050525" /></p>
+
+<p>• What does Normalized Cuts try to optimize?</p>
+
+<p><img src="img/dd2423/image-20241210160058666.png" alt="image-20241210160058666" /></p>
+
+<p>• What cost functions does an energy formulation for segmentation often include?</p>
+
+<p><img src="img/dd2423/image-20241210160105341.png" alt="image-20241210160105341" /></p>
+
+<p>• What is the purpose of graph cuts for segmentation?</p>
+
+<p><img src="img/dd2423/image-20241210160115896.png" alt="image-20241210160115896" /></p>
+
+<p>• What kind of deep-learning based architectures exist for segmentations?</p>
+
+<p><img src="img/dd2423/image-20241210160120933.png" alt="image-20241210160120933" /></p>
+
+<p>• How can you tell what object to segment with Segment Anything?</p>
+
+<p><img src="img/dd2423/image-20241210160125195.png" alt="image-20241210160125195" /></p>
+
+<p>• What does a morphological opening and closing operation do?</p>
+
+<p><img src="img/dd2423/image-20241210160128819.png" alt="image-20241210160128819" /></p>
+
+<h2 id="lecture-10-stereo-geometry">Lecture 10 <strong>Stereo geometry</strong></h2>
+
+<p>What is the depth (in meters) to a 3D point that has the projections (39, 54) and (24, 54) in two different parallel camera images with focal lengths f = 600 and baseline b = 0.10 m.</p>
+
+<p><img src="img/dd2423/image-20241210143324063.png" alt="image-20241210143324063" /></p>
+
+<p><img src="img/dd2423/image-20241210143543844.png" alt="image-20241210143543844" /></p>
+
+<p><img src="img/dd2423/image-20241210143556159.png" alt="image-20241210143556159" /></p>
+
+<p>You are fixating at a point straight ahead with a vergence angle of 4 degrees. What is the depth of that point, assuming that the distance between your eyes is 6 cm?</p>
+
+<p><img src="img/dd2423/image-20241210143623256.png" alt="image-20241210143623256" /></p>
+
+<p><img src="img/dd2423/image-20241210143644341.png" alt="image-20241210143644341" /></p>
+
+<p><img src="img/dd2423/image-20241210143653348.png" alt="image-20241210143653348" /></p>
+
+<p>For a stereo system with two cameras, what is an epipole? Multiple answers may be correct.</p>
+
+<p><img src="img/dd2423/image-20241210143708192.png" alt="image-20241210143708192" /></p>
+
+<p><img src="img/dd2423/image-20241210143737696.png" alt="image-20241210143737696" /></p>
+
+<p>Assume you have a camera moving straight ahead along the optical axis. What the essential matrix between two consecutive images?</p>
+
+<p><img src="img/dd2423/image-20241210144221837.png" alt="image-20241210144221837" /></p>
+
+<p><img src="img/dd2423/image-20241210144215118.png" alt="image-20241210144215118" /></p>
+
+<p><img src="img/dd2423/image-20241210144237723.png" alt="image-20241210144237723" /></p>
+
+<p>What is true regarding the monotonic ordering constraint used for stereo matching? Multiple answers may be correct.</p>
+
+<p><img src="img/dd2423/image-20241210144248091.png" alt="image-20241210144248091" /></p>
+
+<h3 id="summary-of-good-questions-8"><strong>Summary of good questions</strong></h3>
+
+<p>• How does stereo work in general?</p>
+
+<p><img src="img/dd2423/image-20241210160158420.png" alt="image-20241210160158420" /></p>
+
+<p>• Why can you get double vision?</p>
+
+<p><img src="img/dd2423/image-20241210160204399.png" alt="image-20241210160204399" /></p>
+
+<p>• What is triangulation?</p>
+
+<p><img src="img/dd2423/image-20241210160215551.png" alt="image-20241210160215551" /></p>
+
+<p>• What is the relationship between disparities and depths?</p>
+
+<p><img src="img/dd2423/image-20241210160222781.png" alt="image-20241210160222781" /></p>
+
+<p>• Why does the error in depth increase for larger distances?</p>
+
+<p><img src="img/dd2423/image-20241210160229274.png" alt="image-20241210160229274" /></p>
+
+<p>• What are the key concepts of epipolar geometry?</p>
+
+<p><img src="img/dd2423/image-20241210160239228.png" alt="image-20241210160239228" /></p>
+
+<p>• What is an essential matrix and how is it used?</p>
+
+<p><img src="img/dd2423/image-20241210160244744.png" alt="image-20241210160244744" /></p>
+
+<p>• What might complicate stereo matching?</p>
+
+<p><img src="img/dd2423/image-20241210160253808.png" alt="image-20241210160253808" /></p>
+
+<p>• How does a simple stereo matcher work?</p>
+
+<p><img src="img/dd2423/image-20241210160259004.png" alt="image-20241210160259004" /></p>
+
+<p>• What constraints are often used to improve stereo matchers?</p>
+
+<p><img src="img/dd2423/image-20241210160307749.png" alt="image-20241210160307749" /></p>
+
+<p>• What parts do a deep network based stereo matcher often contain?</p>
+
+<p><img src="img/dd2423/image-20241210160311876.png" alt="image-20241210160311876" /></p>
+
+<h2 id="lecture-11-object-recognition">Lecture 11 <strong>Object recognition</strong></h2>
+
+<p>Assume you have a model of a bicycle that contains a description of wheels, saddle, frame, chain, etc. Is model a discriminative model or a generative one?</p>
+
+<p><img src="img/dd2423/image-20241210144313787.png" alt="image-20241210144313787" /></p>
+
+<p>Do the following questions represent a recognition, classification or a detection problem?</p>
+
+<ul>
+  <li>A - What is shown in the center of this image?</li>
+  <li>B - Is there a mobile phone somewhere in the image?</li>
+  <li>C - Does this image show my mobile phone?</li>
+</ul>
+
+<p><img src="img/dd2423/image-20241210144338505.png" alt="image-20241210144338505" /></p>
+
+<p>Let’s say we have an object recognition system based on matching of SIFT features. What kind of image changes is this system typically invariant to? Multiple answers may be correct.</p>
+
+<p><img src="img/dd2423/image-20241210144357466.png" alt="image-20241210144357466" /></p>
+
+<p>Which statements are true regarding Bag of Words (BoW)? Multiple answers may be correct.</p>
+
+<p><img src="img/dd2423/image-20241210144418562.png" alt="image-20241210144418562" /></p>
+
+<p>You have a basket of apples and bananas that are either green or yellow. Assume that 40% of them are bananas, 80% of bananas are yellow and 30% of apples are yellow. If you randomly pick a fruit that happens to be green, in percentage what is the probability that this is an apple?</p>
+
+<p><img src="img/dd2423/image-20241210144708546.png" alt="image-20241210144708546" /></p>
+
+<p><img src="img/dd2423/bf83c910cd3d135e0bd1abaeaeb464b.jpg" alt="bf83c910cd3d135e0bd1abaeaeb464b" /></p>
+
+<h3 id="summary-of-good-questions-9"><strong>Summary of good questions</strong></h3>
+
+<p>• What is the difference between recognition and classification?</p>
+
+<p><img src="img/dd2423/image-20241210160358994.png" alt="image-20241210160358994" /></p>
+
+<p>• What makes a good feature space for recognition?</p>
+
+<p><img src="img/dd2423/image-20241210160403072.png" alt="image-20241210160403072" /></p>
+
+<p>• What kind of invariances do you often want in recognition?</p>
+
+<p><img src="img/dd2423/image-20241210160408604.png" alt="image-20241210160408604" /></p>
+
+<p>• What classes of recognition methods exist and what are their differences?</p>
+
+<p><img src="img/dd2423/image-20241210160413478.png" alt="image-20241210160413478" /></p>
+
+<p>• What does a typical feature based method consist of?</p>
+
+<p><img src="img/dd2423/image-20241210160418501.png" alt="image-20241210160418501" /></p>
+
+<p>• What steps does a Bag of Words approach include?</p>
+
+<p><img src="img/dd2423/image-20241210160423413.png" alt="image-20241210160423413" /></p>
+
+<p>• What are the dominating methods based on deep learning?</p>
+
+<p><img src="img/dd2423/image-20241210160428287.png" alt="image-20241210160428287" /></p>
+
+<p>• Why is object detection harder than object classification?</p>
+
+<p><img src="img/dd2423/image-20241210160432134.png" alt="image-20241210160432134" /></p>
+
+<p>• What characteristics does a nearest neighbour classifier have?</p>
+
+<p><img src="img/dd2423/image-20241210160436478.png" alt="image-20241210160436478" /></p>
+
+<p>• How do you find a decision boundary for Bayesian classification?</p>
+
+<p><img src="img/dd2423/image-20241210160442789.png" alt="image-20241210160442789" /></p>
+
+<h2 id="lecture-12-motion-and-optical-flow">Lecture 12 <strong>Motion and optical flow</strong></h2>
+
+<p>Why is motion estimation often considered harder than stereo? Multiple answers may be correct.</p>
+
+<p><img src="img/dd2423/image-20241210144727940.png" alt="image-20241210144727940" /></p>
+
+<p>By tracking a set of image points, you like to estimate the rotation (Rx,Ry,Rz) and translation (Tx,Ty,Tz) of a moving camera Assume that the x-axis is pointing to the left and the y-axis is pointing up. Which component is the easiest one to estimate?</p>
+
+<p><img src="img/dd2423/image-20241210144740532.png" alt="image-20241210144740532" /></p>
+
+<p>What conditions are necessary for you to be able to compute the optical flow using the optical flow constraint?</p>
+
+<p><img src="img/dd2423/image-20241210144751504.png" alt="image-20241210144751504" /></p>
+
+<p><img src="img/dd2423/image-20241210144831627.png" alt="image-20241210144831627" /></p>
+
+<p><img src="img/dd2423/image-20241210144844092.png" alt="image-20241210144844092" /></p>
+
+<p>Compared to Lucas &amp; Kanade, does an affine motion model allow you to use larger windows around each point for which you like to determine the optical flow?</p>
+
+<p><img src="img/dd2423/image-20241210144905647.png" alt="image-20241210144905647" /></p>
+
+<p><img src="img/dd2423/image-20241210144959216.png" alt="image-20241210144959216" /></p>
+
+<p><img src="img/dd2423/image-20241210145012386.png" alt="image-20241210145012386" /></p>
+
+<p><img src="img/dd2423/image-20241210145021247.png" alt="image-20241210145021247" /></p>
+
+<p>What is true regarding the monotonic ordering constraint used for stereo matching? Multiple answers may be correct.</p>
+
+<p><img src="img/dd2423/image-20241210145031672.png" alt="image-20241210145031672" /></p>
+
+<p><img src="img/dd2423/image-20241210145318812.png" alt="image-20241210145318812" /></p>
+
+<h3 id="summary-of-good-questions-10"><strong>Summary of good questions</strong></h3>
+
+<p>• Why is motion more complex than stereo?</p>
+
+<p><img src="img/dd2423/image-20241210160519774.png" alt="image-20241210160519774" /></p>
+
+<p>• What is a Focus of Expansion?</p>
+
+<p><img src="img/dd2423/image-20241210160526547.png" alt="image-20241210160526547" /></p>
+
+<p>• What is Motion field and what is Optical flow?</p>
+
+<p><img src="img/dd2423/image-20241210160532344.png" alt="image-20241210160532344" /></p>
+
+<p>• How do you derive the optical flow constraint?</p>
+
+<p><img src="img/dd2423/image-20241210160539416.png" alt="image-20241210160539416" /></p>
+
+<p>• What is a Second moment matrix?</p>
+
+<p><img src="img/dd2423/image-20241210160547070.png" alt="image-20241210160547070" /></p>
+
+<p>• How does Lukas &amp; Kanade cope with large optical flow?</p>
+
+<p><img src="img/dd2423/image-20241210160552726.png" alt="image-20241210160552726" /></p>
+
+<p>• What are the characteristics of Horn &amp; Schunck?</p>
+
+<p><img src="img/dd2423/image-20241210160558845.png" alt="image-20241210160558845" /></p>
+
+<p>• How do modern methods avoid problems around the borders of objects?</p>
+
+<p><img src="img/dd2423/image-20241210160603952.png" alt="image-20241210160603952" /></p>
+
+:ET
