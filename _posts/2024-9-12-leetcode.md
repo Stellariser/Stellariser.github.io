@@ -98,7 +98,7 @@ class Solution:
 
 **说明：**你不能倾斜容器。
 
-![image-20240802162006115](img/leetcode/image-20240802162006115.png)
+![image-20240802162006115](img/image-20240802162006115.png)
 
 ```python
 class Solution:
@@ -125,7 +125,7 @@ class Solution:
 
 给定 `n` 个非负整数表示每个宽度为 `1` 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
 
- ![image-20240802172559556](img/leetcode/image-20240802172559556.png)
+ ![image-20240802172559556](img/image-20240802172559556.png)
 
 ```python
 class Solution:
@@ -210,7 +210,7 @@ class Solution:
             return res
 ```
 
-### ![image-20240802193031463](img/leetcode/image-20240802193031463.png)
+### ![image-20240802193031463](img/image-20240802193031463.png)
 
 ```python
 class Solution:
@@ -292,7 +292,7 @@ def lower_bound3(nums: List[int], target: int) -> int:
 
 #### 在排序数组中查找元素的第一个和最后一个位置
 
-![image-20240803140727687](img/leetcode/image-20240803140727687.png)
+![image-20240803140727687](img/image-20240803140727687.png)
 
 解决这个问题
 
@@ -321,7 +321,7 @@ class Solution:
 
 #### 寻找旋转排序数组中的最小值
 
-![image-20240803153927412](img/leetcode/image-20240803153927412.png)
+![image-20240803153927412](img/image-20240803153927412.png)
 
 这里我还是坚持使用闭区间，用中间值和数组最左侧的值进行比较
 
@@ -346,7 +346,7 @@ class Solution:
 
 #### 搜索旋转排序数组
 
-![image-20240804152924632](img/leetcode/image-20240804152924632.png)
+![image-20240804152924632](img/image-20240804152924632.png)
 
 ```python
 class Solution:
@@ -377,7 +377,7 @@ class Solution:
 
 ### 反转链表
 
-![image-20240804161228682](img/leetcode/image-20240804161228682.png)
+![image-20240804161228682](img/image-20240804161228682.png)
 
 解答
 
@@ -408,7 +408,7 @@ class Solution:
 
 #### 反转链表2
 
-![image-20240804192500031](img/leetcode/image-20240804192500031.png)
+![image-20240804192500031](img/image-20240804192500031.png)
 
 非常恶心人的一道题
 
@@ -440,7 +440,7 @@ class Solution:
 
 #### k个一组反转链表
 
-![image-20240805161448549](img/leetcode/image-20240805161448549.png)
+![image-20240805161448549](img/image-20240805161448549.png)
 
 
 
@@ -476,7 +476,7 @@ class Solution:
         return dummy.next    
 ```
 
-![image-20240805162118986](img/leetcode/image-20240805162118986.png)
+![image-20240805162118986](img/image-20240805162118986.png)
 
 做这种题一定要定位p0，cur和prev
 
@@ -486,7 +486,7 @@ class Solution:
 
 #### 链表的中间节点
 
-![image-20240805163316874](img/leetcode/image-20240805163316874.png)
+![image-20240805163316874](img/image-20240805163316874.png)
 
 可以使用一个每次走两步的和一个每次走一步的指针，快的到了，慢的也就正好到了一半，但是边缘条件要处理好
 
@@ -513,7 +513,7 @@ class Solution:
 
 #### 判断链表是否有环
 
-![image-20240805172056758](img/leetcode/image-20240805172056758.png)
+![image-20240805172056758](img/image-20240805172056758.png)
 
 用字典记录是一种办法
 
@@ -566,7 +566,7 @@ class Solution:
 
 #### 环形链表2 找到环出现的点
 
-![image-20240805174125435](img/leetcode/image-20240805174125435.png)
+![image-20240805174125435](img/image-20240805174125435.png)
 
 哈希表
 
@@ -596,7 +596,7 @@ class Solution:
 
 #### 删除链表的倒数第n个节点
 
-![image-20240806142011301](img/leetcode/image-20240806142011301.png)
+![image-20240806142011301](img/image-20240806142011301.png)
 
 一般来说，当有可能会需要删除头节点的时候，使用dummy节点
 
@@ -625,7 +625,7 @@ class Solution:
 
 #### 删除排序链表中的重复元素
 
-![image-20240806143713938](img/leetcode/image-20240806143713938.png)
+![image-20240806143713938](img/image-20240806143713938.png)
 
 如果是排序好的，就可以使用快慢指针。
 
@@ -676,7 +676,7 @@ class Solution:
 
 #### 删除列表中重读的元素,连带他本身
 
-![image-20240806160435131](img/leetcode/image-20240806160435131.png)
+![image-20240806160435131](img/image-20240806160435131.png)
 
 这个可以先用哈希表做，做出来最重要
 
@@ -715,9 +715,9 @@ class Solution:
 
 #### 二叉树的最大深度
 
-![image-20240806164408193](img/leetcode/image-20240806164408193.png)
+![image-20240806164408193](img/image-20240806164408193.png)
 
-![image-20240806164414620](img/leetcode/image-20240806164414620.png)
+![image-20240806164414620](img/image-20240806164414620.png)
 
 ```python
 # Definition for a binary tree node.
@@ -749,7 +749,7 @@ class Solution:
 
 #### 相同的树
 
-![image-20240806174356505](img/leetcode/image-20240806174356505.png)
+![image-20240806174356505](img/image-20240806174356505.png)
 
 ```python
 # Definition for a binary tree node.
@@ -772,7 +772,7 @@ class Solution:
 
 #### 对称二叉树
 
-![image-20240806175147044](img/leetcode/image-20240806175147044.png)
+![image-20240806175147044](img/image-20240806175147044.png)
 
 ```python
 # Definition for a binary tree node.
@@ -800,7 +800,7 @@ class Solution:
 
 #### 平衡二叉树
 
-![image-20240806181418663](img/leetcode/image-20240806181418663.png)
+![image-20240806181418663](img/image-20240806181418663.png)
 
 非常好的一道题
 
@@ -833,7 +833,7 @@ class Solution:
 
 非常不错的一道题，可以用层序遍历，也可以使用递归
 
-![image-20240808000450321](img/leetcode/image-20240808000450321.png)
+![image-20240808000450321](img/image-20240808000450321.png)
 
 ##### 层序遍历
 
@@ -861,7 +861,7 @@ class Solution:
 
 ##### 递归
 
-![image-20240808000847654](img/leetcode/image-20240808000847654.png)
+![image-20240808000847654](img/image-20240808000847654.png)
 
 ```python
 class Solution:
@@ -884,7 +884,7 @@ class Solution:
 
 这里就需要实现带区间的树递归参数传递
 
-![image-20240809125914441](img/leetcode/image-20240809125914441.png)
+![image-20240809125914441](img/image-20240809125914441.png)
 
 ```python
 class Solution:
@@ -901,7 +901,7 @@ class Solution:
         return dfs(root,-inf,inf)
 ```
 
-![image-20240809130115615](img/leetcode/image-20240809130115615.png)
+![image-20240809130115615](img/image-20240809130115615.png)
 
  第二种方法基于，中序遍历二叉搜索树后会得到一个严格递增的数组
 
@@ -927,25 +927,25 @@ class Solution:
 
 #### 二叉树的最近公共祖先
 
-![image-20240809153057799](img/leetcode/image-20240809153057799.png)
+![image-20240809153057799](img/image-20240809153057799.png)
 
 分类讨论
 
 如果在递归中找到了p或q，就直接返回就行，因为如果另一个在其下方，那么最近公共祖先都是一开始被找到的那个p或q
 
-![image-20240809153508858](img/leetcode/image-20240809153508858.png)
+![image-20240809153508858](img/image-20240809153508858.png)
 
 如果左右子树都找到了，那么返回自身，因为别的情况不可能
 
-![image-20240809153552904](img/leetcode/image-20240809153552904.png)
+![image-20240809153552904](img/image-20240809153552904.png)
 
 如果只有左子树找到了，那么但肯定不在右子树中，因此只需要递归左子树的结果就可以
 
-![image-20240809153640078](img/leetcode/image-20240809153640078.png)
+![image-20240809153640078](img/image-20240809153640078.png)
 
 因此结果为
 
-![image-20240809153706788](img/leetcode/image-20240809153706788.png)
+![image-20240809153706788](img/image-20240809153706788.png)
 
 ```python
 class Solution:
@@ -985,7 +985,7 @@ def lca(root):
 
 ### BFS 广度优先搜索，可以使用基于Deque的层序遍历
 
-![image-20240809181906175](img/leetcode/image-20240809181906175.png)
+![image-20240809181906175](img/image-20240809181906175.png)
 
 ```python
 class Solution:
@@ -1013,7 +1013,7 @@ class Solution:
 
 #### 电话号码的字母组合
 
-![image-20240809185424619](img/leetcode/image-20240809185424619.png)
+![image-20240809185424619](img/image-20240809185424619.png)
 
 ```python
 class Solution:
@@ -1049,7 +1049,7 @@ class Solution:
 
 #### 子集
 
-![image-20240813173825448](img/leetcode/image-20240813173825448.png)
+![image-20240813173825448](img/image-20240813173825448.png)
 
 
 
@@ -1093,7 +1093,7 @@ class Solution:
 
 #### 分割回文串
 
-![image-20240813180523648](img/leetcode/image-20240813180523648.png)
+![image-20240813180523648](img/image-20240813180523648.png)
 
 ```python
 class Solution:
@@ -1117,7 +1117,7 @@ class Solution:
 
 ### 2.组合型回溯
 
-#### ![image-20240813210758329](img/leetcode/image-20240813210758329.png)
+#### ![image-20240813210758329](img/image-20240813210758329.png)
 
 ```python
 class Solution:
@@ -1135,7 +1135,7 @@ class Solution:
         return res
 ```
 
-![image-20240813213803029](img/leetcode/image-20240813213803029.png)
+![image-20240813213803029](img/image-20240813213803029.png)
 
 
 
@@ -1159,7 +1159,7 @@ class Solution:
         return res
 ```
 
-![image-20240813214738748](img/leetcode/image-20240813214738748.png)
+![image-20240813214738748](img/image-20240813214738748.png)
 
 ```python
 class Solution:
@@ -1189,7 +1189,7 @@ class Solution:
 
 #### 全排列
 
-![image-20240813220000520](img/leetcode/image-20240813220000520.png)
+![image-20240813220000520](img/image-20240813220000520.png)
 
 ```python
 class Solution:
@@ -1214,7 +1214,7 @@ n乘以n的阶乘，因为可选的字母是越来越少的，因此树的深度
 
 #### 全排列2
 
-![image-20240813222307034](img/leetcode/image-20240813222307034.png)
+![image-20240813222307034](img/image-20240813222307034.png)
 
 ```python
 class Solution:
@@ -1241,7 +1241,7 @@ class Solution:
 
 #### N皇后
 
-![image-20240814122231934](img/leetcode/image-20240814122231934.png)
+![image-20240814122231934](img/image-20240814122231934.png)
 
 ```python
 class Solution:
@@ -1298,7 +1298,7 @@ class Solution:
 
 #### 打家劫舍
 
-![image-20240814153920958](img/leetcode/image-20240814153920958.png)
+![image-20240814153920958](img/image-20240814153920958.png)
 
 可以先用回溯做
 
@@ -1368,7 +1368,7 @@ class Solution:
 
 ### 背包问题
 
-#### ![image-20240814164309595](img/leetcode/image-20240814164309595.png)
+#### ![image-20240814164309595](img/image-20240814164309595.png)
 
 #### 01背包问题
 
@@ -1396,7 +1396,7 @@ def zeronebag(capacity,w,v):
 
 ##### 目标和
 
-![image-20240814172211710](img/leetcode/image-20240814172211710.png)
+![image-20240814172211710](img/image-20240814172211710.png)
 
 先来一个暴力解法，时间复杂度很高
 
@@ -1497,11 +1497,11 @@ class Solution:
 
 #### 完全背包问题
 
-![image-20240814180543143](img/leetcode/image-20240814180543143.png)
+![image-20240814180543143](img/image-20240814180543143.png)
 
 ##### 零钱兑换
 
-![image-20240814192943190](img/leetcode/image-20240814192943190.png)
+![image-20240814192943190](img/image-20240814192943190.png)
 
 首先是最蠢的办法
 
@@ -1567,7 +1567,7 @@ class Solution:
 
 #### 最长公共子序列
 
-![image-20240814204448750](img/leetcode/image-20240814204448750.png)
+![image-20240814204448750](img/image-20240814204448750.png)
 
 先来一个回溯解法
 
@@ -1610,9 +1610,9 @@ class Solution:
 
 #### 编辑距离
 
-![image-20240815133917223](img/leetcode/image-20240815133917223.png)
+![image-20240815133917223](img/image-20240815133917223.png)
 
-![image-20240815140304897](img/leetcode/image-20240815140304897.png)
+![image-20240815140304897](img/image-20240815140304897.png)
 
 首先是回溯写法
 
@@ -1663,7 +1663,7 @@ class Solution:
 
 #### 最长递增子序列
 
-![image-20240815161039868](img/leetcode/image-20240815161039868.png)
+![image-20240815161039868](img/image-20240815161039868.png)
 
 ```python
 class Solution:
@@ -1699,13 +1699,13 @@ class Solution:
 
 ### 状态机DP
 
-![image-20240815204004197](img/leetcode/image-20240815204004197.png)
+![image-20240815204004197](img/image-20240815204004197.png)
 
 
 
 #### 买卖股票的最佳时机，不限制交易次数
 
-![image-20240816193722387](img/leetcode/image-20240816193722387.png)
+![image-20240816193722387](img/image-20240816193722387.png)
 
 投机取巧的方法
 
@@ -1723,7 +1723,7 @@ class Solution:
 
  回溯
 
-![image-20240816202808795](img/leetcode/image-20240816202808795.png)
+![image-20240816202808795](img/image-20240816202808795.png)
 
 
 
@@ -1765,7 +1765,7 @@ class Solution:
 
 #### 如果有冷冻期呢
 
-![image-20240816211415201](img/leetcode/image-20240816211415201.png)
+![image-20240816211415201](img/image-20240816211415201.png)
 
 ```python
 class Solution:
@@ -1785,9 +1785,9 @@ class Solution:
 
 #### 如果有交易次数限制呢
 
-![image-20240816211902082](img/leetcode/image-20240816211902082.png)
+![image-20240816211902082](img/image-20240816211902082.png)
 
-![image-20240816211949383](img/leetcode/image-20240816211949383.png)
+![image-20240816211949383](img/image-20240816211949383.png)
 
 这里就需要添加一个参数，表示，到i天结束时，完成了最多j笔交易
 
@@ -1828,13 +1828,13 @@ class Solution:
 
 #### 恰好和至少
 
-![image-20240816213526221](img/leetcode/image-20240816213526221.png)
+![image-20240816213526221](img/image-20240816213526221.png)
 
 ### 区间DP
 
 #### 最长回文子序列
 
-![image-20240816215411899](img/leetcode/image-20240816215411899.png)
+![image-20240816215411899](img/image-20240816215411899.png)
 
 ```python
 class Solution:
@@ -1871,11 +1871,11 @@ class Solution:
 
 #### 多边形三角剖分的最低得分
 
-![image-20240818165035073](img/leetcode/image-20240818165035073.png)
+![image-20240818165035073](img/image-20240818165035073.png)
 
-![image-20240818165050375](img/leetcode/image-20240818165050375.png)
+![image-20240818165050375](img/image-20240818165050375.png)
 
-![image-20240818165106360](img/leetcode/image-20240818165106360.png)
+![image-20240818165106360](img/image-20240818165106360.png)
 
 ```python
 class Solution:
@@ -1901,7 +1901,7 @@ class Solution:
 
 #### 二叉树的直径
 
-![image-20240818173714786](img/leetcode/image-20240818173714786.png)
+![image-20240818173714786](img/image-20240818173714786.png)
 
 ```python
 class Solution:
@@ -1926,7 +1926,7 @@ class Solution:
 
 #### 二叉树中的最大路径和
 
-![image-20240818180927770](img/leetcode/image-20240818180927770.png)
+![image-20240818180927770](img/image-20240818180927770.png)
 
 ```python
 class Solution:
@@ -1951,7 +1951,7 @@ class Solution:
 
 #### 一般树中，相邻字符不同的最长路径
 
-![image-20240818184335866](img/leetcode/image-20240818184335866.png)
+![image-20240818184335866](img/image-20240818184335866.png)
 
 ```python
 class Solution:
@@ -1978,7 +1978,7 @@ class Solution:
 
 #### 打家劫舍3
 
-![image-20240818190212782](img/leetcode/image-20240818190212782.png)
+![image-20240818190212782](img/image-20240818190212782.png)
 
 ```python
 class Solution:
@@ -2009,11 +2009,11 @@ class Solution:
 
 #### 监控二叉树
 
-![image-20240818193728388](img/leetcode/image-20240818193728388.png)
+![image-20240818193728388](img/image-20240818193728388.png)
 
 如果根节点不装，那么至少他有一个子节点要装
 
-![image-20240818194103264](img/leetcode/image-20240818194103264.png)
+![image-20240818194103264](img/image-20240818194103264.png)
 
 
 
@@ -2059,7 +2059,7 @@ class Solution:
 
 地下城游戏
 
-![image-20240818123931311](img/leetcode/image-20240818123931311.png)
+![image-20240818123931311](img/image-20240818123931311.png)
 
 
 
@@ -2084,7 +2084,7 @@ class Solution:
 
 #### 每日温度
 
-![image-20240818214621097](img/leetcode/image-20240818214621097.png)
+![image-20240818214621097](img/image-20240818214621097.png)
 
 ```python
 class Solution:
@@ -2106,7 +2106,7 @@ class Solution:
 
 #### 接雨水
 
-![image-20240819145959426](img/leetcode/image-20240819145959426.png)
+![image-20240819145959426](img/image-20240819145959426.png)
 
 单调栈做法
 
@@ -2173,7 +2173,7 @@ class Solution:
 
 #### 滑动窗口最大值
 
-![image-20240819154650874](img/leetcode/image-20240819154650874.png)
+![image-20240819154650874](img/image-20240819154650874.png)
 
 ```python
 class Solution:
